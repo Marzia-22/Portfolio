@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --color-bg: #F8F5F1;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F0EAE3;
+
+  /* Text */
+  --color-text: #1C1917;
+  --color-text-muted: #78716C;
+  --color-text-subtle: #A8A29E;
+
+  /* Accent — sophisticated muted sienna/terracotta, more red than orange */
+  --color-accent: #9C4A35;
+  --color-accent-hover: #7E3726;
+  --color-accent-soft: #EDD9D0;
+
+  /* Borders & dividers */
+  --color-border: #E5DDD6;
+
+  /* Dark "ink" surfaces (Aesthio section, etc.) */
+  --color-ink: #1A1210;
+  --color-ink-surface: #231915;
+  --color-ink-text: #F4EDE8;
+  --color-ink-muted: #9A8C87;
+}
+
+/* ─── Base Resets ────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ─── Selection ──────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+}
+
+/* ─── Focus Visible ──────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ─── Scroll Reveal Animation ────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+
+/* ─── Hero Entrance Animations ───────────────────────────── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hero-line-1 {
+  animation: heroFadeUp 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
+}
+.hero-line-2 {
+  animation: heroFadeUp 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.28s both;
+}
+.hero-line-3 {
+  animation: heroFadeUp 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.42s both;
+}
+.hero-line-4 {
+  animation: heroFadeUp 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.56s both;
+}
+.hero-abstract {
+  animation: heroFadeIn 1s ease 0.3s both;
+}
+
+/* ─── SVG Node Pulse ─────────────────────────────────────── */
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.9; r: 6; }
+  50%       { opacity: 0.45; r: 4.5; }
+}
+
+@keyframes nodePulse2 {
+  0%, 100% { opacity: 0.7; r: 4; }
+  50%       { opacity: 0.3; r: 3; }
+}
+
+.svg-node-primary {
+  animation: nodePulse 3.5s ease-in-out infinite;
+}
+
+.svg-node-secondary {
+  animation: nodePulse2 4.5s ease-in-out 1s infinite;
+}
+
+/* ─── Respect reduced motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3,
+  .hero-line-4,
+  .hero-abstract {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .svg-node-primary,
+  .svg-node-secondary {
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ─── Navigation ─────────────────────────────────────────── */
+.nav-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+              box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.nav-scrolled {
+  background-color: rgba(248, 245, 241, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Aesthio Dark Section ───────────────────────────────── */
+.aesthio-section {
+  background-color: var(--color-ink);
+  color: var(--color-ink-text);
+}
+
+/* ─── Interface Preview Placeholder ─────────────────────── */
+.ui-placeholder {
+  background: var(--color-ink-surface);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ui-placeholder-bar {
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, transparent 60%);
+  opacity: 0.5;
+}
+
+/* ─── Tech Chips ─────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.chip-default {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.chip-accent {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.chip-ink {
+  background-color: rgba(255,255,255,0.07);
+  color: rgba(244,237,232,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ─── Project Card Hover ─────────────────────────────────── */
+.project-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(28, 25, 23, 0.10);
+}
+
+/* ─── Underline Link ─────────────────────────────────────── */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.25s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ─── Section Divider ────────────────────────────────────── */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+}
+
+/* ─── Skill Group ────────────────────────────────────────── */
+.skill-group-label {
+  font-size: 0.7rem;
+  font-family: var(--font-jetbrains), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Achievement Item ───────────────────────────────────── */
+.achievement-item {
+  border-left: 2px solid var(--color-border);
+  padding-left: 1.25rem;
+  transition: border-color 0.25s ease;
+}
+
+.achievement-item:hover {
+  border-left-color: var(--color-accent);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-subtle);
+}
