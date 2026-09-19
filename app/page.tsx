@@ -5,14 +5,17 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
-import CurrentlyLearning from "@/components/CurrentlyLearning";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import PageLoader from "@/components/PageLoader";
 
 export default function Home() {
   return (
     <>
+      <PageLoader />
       <Navigation />
+      <CustomCursor />
       <main id="main-content">
         <Hero />
         <Work />
@@ -20,7 +23,6 @@ export default function Home() {
         <Experience />
         <Skills />
         <Achievements />
-        <CurrentlyLearning />
         <Contact />
       </main>
       <Footer />

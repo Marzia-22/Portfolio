@@ -27,9 +27,9 @@ const jetbrains = JetBrains_Mono({
 const baseUrl = "https://marziatasneem.dev";
 
 export const metadata: Metadata = {
-  title: "Marzia Tasneem — CS Student & Full-Stack Developer",
+  title: "Marzia Tasneem | CSE Student & Full-Stack Developer",
   description:
-    "Portfolio of Marzia Tasneem — a third-year Computer Science student at KLH University building full-stack applications, exploring AI, and solving hard problems.",
+    "Portfolio of Marzia Tasneem, a third-year Computer Science student at KLH University building full-stack applications and exploring practical AI.",
   keywords: [
     "Marzia Tasneem",
     "Computer Science",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   creator: "Marzia Tasneem",
   metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Marzia Tasneem — CS Student & Full-Stack Developer",
+    title: "Marzia Tasneem | CSE Student & Full-Stack Developer",
     description:
       "Building full-stack applications, exploring AI, and learning everything I can. Third-year CSE student at KLH University, Hyderabad.",
     url: baseUrl,
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marzia Tasneem — CS Student & Full-Stack Developer",
+    title: "Marzia Tasneem | CSE Student & Full-Stack Developer",
     description:
       "Building full-stack applications, exploring AI, and learning everything I can.",
   },

@@ -10,7 +10,7 @@ export const profile = {
   title: "Computer Science & Engineering Student",
   university: "KLH University, Hyderabad",
   degree: "B.Tech in Computer Science & Engineering",
-  period: "2024 – 2028",
+  period: "2024 to 2028",
   year: "Third Year",
   cgpa: "9.65 / 10",
   location: "Hyderabad, India",
@@ -20,16 +20,11 @@ export const profile = {
   email: null as string | null,
 };
 
-export const bio = `I'm a Computer Science student at KLH University, currently in my third year.
-I got into programming because I wanted to build things I could actually use — and that curiosity
-grew into a genuine interest in full-stack development, algorithmic problem-solving, and AI applications.
+export const bio = `I am Marzia Tasneem, a third-year Computer Science and Engineering student at KLH University in Hyderabad.
 
-Most of my time goes into writing code, learning how systems work under the hood, and building
-projects that do something real. My internship at Thiranex gave me my first look at how production
-software development actually works in a team — code reviews, deployment cycles, the whole thing.
+My core work is Java, DSA, and full-stack development. Projects such as Aesthio and GENIE are where I test ideas by building working software, not just prototypes.
 
-Right now I'm particularly interested in full-stack web development and how AI fits into practical
-applications. I'm always working on something.`;
+I am interested in practical AI-powered applications and in understanding the systems behind the products I build. My Full Stack Development internship at Thiranex gave me experience working with responsive interfaces, backend logic, version control, and team workflows.`;
 
 /* ─── Experience ─────────────────────────────────────────── */
 export const experience = [
@@ -38,7 +33,7 @@ export const experience = [
     role: "Full Stack Development Intern",
     type: "Internship",
     description:
-      "Worked on full-stack web applications — developing responsive user interfaces, implementing backend logic, and integrating frontend and backend systems. Practised version control, participated in code reviews, and learned how software development works in a professional team setting with agile methodology.",
+      "Worked on full-stack web applications, developing responsive user interfaces, implementing backend logic, and integrating frontend and backend systems. Practised version control, participated in code reviews, and learned team workflows through agile development.",
     highlights: [
       "Built responsive UI components and integrated them with backend APIs",
       "Implemented backend logic for web application features",
@@ -84,9 +79,9 @@ export const projects = {
     name: "GENIE",
     tagline: "Smart Learning Companion",
     event: "HackRevolution 2025, MJCET",
-    achievement: "4th Place — Smart Education Track",
+    achievement: "4th Place, Smart Education Track",
     description:
-      "An intelligent education platform built for HackRevolution 2025. GENIE provides personalized learning support and adaptive guidance for students — helping them track progress, receive targeted recommendations, and get real-time feedback.",
+      "An intelligent education platform built for HackRevolution 2025. GENIE provides personalized learning support and adaptive guidance for students, helping them track progress, receive targeted recommendations, and get real-time feedback.",
     features: [
       "Personalized learning paths based on student profile",
       "Adaptive guidance that adjusts to progress",
@@ -104,7 +99,7 @@ export const projects = {
     type: "Academic Project",
     tagline: "Skill-Based Career Path Explorer",
     description:
-      "A web-based platform that suggests career paths based on a user's skills, interests, and preferences. Designed with an intuitive step-by-step flow — from skill input through to structured, personalized career results.",
+      "A web-based platform that suggests career paths based on a user's skills, interests, and preferences. It uses a step-by-step flow from skill input to structured career results.",
     features: [
       "Responsive interface across devices",
       "Guided input flow for skills and interests",
@@ -118,7 +113,7 @@ export const projects = {
   nasaSpaceApps: {
     name: "NASA Space Apps Hyderabad",
     type: "Open Source Contribution",
-    tagline: "Website Contribution — NASA Space Apps 2026",
+    tagline: "Website Contribution, NASA Space Apps 2026",
     description:
       "Contributed to the official website for NASA Space Apps Hyderabad 2026. This was a collaborative project with other contributors.",
     note: "Contribution details and repository link to be added.",
@@ -144,7 +139,7 @@ export const skills = {
 /* ─── Achievements ───────────────────────────────────────── */
 export const achievements = [
   {
-    title: "4th Place — Smart Education Track",
+    title: "4th Place, Smart Education Track",
     event: "HackRevolution 2025, MJCET",
     detail: "Built GENIE, an adaptive learning platform, as part of a hackathon team.",
     highlight: true,
@@ -157,19 +152,19 @@ export const achievements = [
   },
   {
     title: "Presented AI Kacheri",
-    event: "Microsoft Hyderabad — Bhashini Initiative",
+    event: "Microsoft Hyderabad, Bhashini Initiative",
     detail: "Presented an AI project at Microsoft Hyderabad as part of the Bhashini language initiative.",
     highlight: false,
   },
   {
-    title: "Participated — Decode & Display",
+    title: "Participated, Decode & Display",
     event: "University of Hyderabad",
     detail: "Participated in the Decode & Display technical event.",
     highlight: false,
   },
   {
     title: "9.65 / 10 CGPA",
-    event: "KLH University — B.Tech CSE",
+    event: "KLH University, B.Tech CSE",
     detail: "Maintaining academic excellence across all semesters.",
     highlight: false,
   },
@@ -182,7 +177,7 @@ export const certifications = [
     issuer: "Cisco Networking Academy",
   },
   {
-    name: "Automation Anywhere Certified — RPA Fundamentals",
+    name: "Automation Anywhere Certified, RPA Fundamentals",
     issuer: "Automation Anywhere",
   },
   {
